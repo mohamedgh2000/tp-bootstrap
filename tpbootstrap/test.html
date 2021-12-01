@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <style type="text/css">
+    .font-effect-shadow-multiple{
+      font-family: "Sofia", sans-serif;
+    }
+    @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+:root {
+  --level-one: translateZ(3rem);
+  --level-two: translateZ(6rem);
+  --level-three: translateZ(9rem);
+  
+  --fw-normal: 400;
+  --fw-bold: 700;
+  
+  --clr: #b7c9e5;
+  --bg-color: hsl(285, 100%, 60%);
+  --typewriterSpeed: 3s;
+  --typewriterCharacters: 24;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+.header2{
+
+align-items: center;
+justify-content: space-between;
+/*position: fixed;
+top:0; left:0; right:0;
+*/
+width: 100%;
+z-index: 100;
+
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: 'Oswald', sans-serif;
+  
+  background-image:url("Untitled.png"); 
+  background-repeat: repeat;
+  position: absolute;
+}
+.column {
+  float: left;
+  width: 33%;
+  padding: 0 20px;}
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.card {
+  width: 400px;
+   text-align: center;
+   background-image:url("Untitled.png");
+}
+
+.card__content {
+  text-align: center;
+  position: relative;
+  padding: 15em 5em;
+  transition: transform 3s;
+  background: pink;
+  border-radius: 15px;
+  transform-style: preserve-3d;
+
+}
+
+.card:hover .card__content {
+  transform: rotateY(.5turn);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5em 3em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  display: grid;
+  align-content: center;
+}
+
+.card__front {
+  background-color: var(--clr);
+  
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #333;
+}
+
+.card__front::before {
+  content: '';
+  position: absolute;
+  --spacer: 1em;
+  top: var(--spacer);
+  bottom: var(--spacer);
+  left: var(--spacer);
+  right: var(--spacer);
+  border: 3px solid currentColor;
+  transform: var(--level-one);
+}
+
+.card__title {
+  font-size: 3.5rem;
+  transform: var(--level-three);
+  order: 2;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  transform: var(--level-two);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: .75rem;
+  font-weight: var(--fw-bold);
+  opacity: .7;
+}
+
+.card__body {
+  transform: var(--level-two);
+  font-weight: var(fw-normal);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+
+
+.card__back {
+  transform: rotateY(.5turn);
+  color: var(--clr);
+  background: #333;
+  border-radius: 15px;
+}
+.container {
+    background-color: white;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+    margin-bottom: 50px
+    top:100px;
+    background-image: url("greg-rakozy-oMpAz-DN-9I-unsplash.jpg");;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 100
+}
+
+.icon {
+    position: relative;
+    bottom: 11px
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.profile img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%
+}
+
+.card {
+    border-radius: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2)
+}
+
+.card-body {
+    position: relative;
+    bottom: 35px
+}
+
+.btn {
+    margin-top: 36px;
+    margin-bottom: 45px;
+    background-color: #AB47BC;
+    border: none;
+    color: #fff
+}
+
+.btn:hover {
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    color: #fff
+}
+
+.header {
+    padding-top: 40px;
+}
+.collapse .dropdown-menu .dropdown-item:hover{
+    font-family: 'Warnes', cursive;
+    color: #fff;
+    background-color: black;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc00ff, 0 0 20px #cc00ff, 0 0 25px #cc00ff, 0 0 30px #cc00ff, 0 0 35px #cc00ff;
+}
+.glitch {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+
+  text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+    -0.025em -0.05em 0 rgba(0, 255, 0, 0.75),
+    0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+
+  animation: glitch 500ms infinite;
+}
+
+.glitch span {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.glitch span:first-child {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+  /* color: green; */
+  opacity: 0.8;
+}
+
+.glitch span:last-child {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+  transform: translate(0.0125em, 0.025em);
+  /* color: red; */
+  opacity: 0.8;
+}
+
+/* https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites */
+
+@keyframes glitch {
+  0% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  14% {
+    text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
+      -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em 0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  15% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, 0.75),
+      0.025em 0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.05em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  99% {
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, 0.75),
+      0.05em 0 0 rgba(0, 255, 0, 0.75), 0 -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+  100% {
+    text-shadow: -0.025em 0 0 rgba(255, 0, 0, 0.75),
+      -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
+      -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+}
+h2 {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  position: relative;
+  font-family: "Source Code Pro", monospace;
+  position: relative;
+  width: max-content;
+}
+
+h2::before,
+h2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h2::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h2::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+.subtitle {
+  color: hsl(0 0% 0% / 0.7);
+  font-size: 2rem;
+  font-weight: 400;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+  </style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+
+ 
+  
+  <body>
+   
+<header class="header2">
+
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          
+
+
+    <a class="navbar-brand p-0" href="https://www.twitch.tv/" target="_blank">
+      <img src="7reK.gif" alt="" width="56" height="56">
+    </a>
+  
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="https://gaming.amazon.com/intro" target="_blank" style="font-family: 'Warnes', cursive;
+    color: #fff;text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;">Twitch Prime</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="font-family: 'Warnes', cursive;
+    color: #fff;text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc00ff, 0 0 20px #cc00ff, 0 0 25px #cc00ff, 0 0 30px #cc00ff, 0 0 35px #cc00ff;">Stream</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'Warnes', cursive;
+    color: #fff;text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc00ff, 0 0 20px #cc00ff, 0 0 25px #cc00ff, 0 0 30px #cc00ff, 0 0 35px #cc00ff;">
+                  other actions
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="https://help.twitch.tv/s/?language=fr" target="_blank">FAQ</a></li>
+                  <li><a class="dropdown-item" href="https://help.twitch.tv/s/?language=fr" target="_blank">TECH support</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="https://help.twitch.tv/s/?language=fr" target="_blank">Help</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" style="font-family: 'Warnes', cursive;
+    color: #fff;text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc00ff, 0 0 20px #cc00ff, 0 0 25px #cc00ff, 0 0 30px #cc00ff, 0 0 35px #cc00ff;">your videos</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <h2 class="glitch" style="color: white;font-family: 'Warnes', cursive;" >
+  <span aria-hidden="true" >welcome to the arcade !  </span>
+welcome to the arcade !
+  <span aria-hidden="true" >welcome to the arcade !  </span>
+</h2>
+<br>
+<br>
+<!-- <h2 class="text-center" style="font-family: 'Warnes', cursive;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;font-size: 500%;">Welcome To Twitch</h2>
+    <br>
+    <br> -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="carl-raw-m3hn2Kn5Bns-unsplash.jpg" alt="Los Angeles" style="width:auto;">
+        <div class="carousel-caption">
+          <h3  class="font-effect-shadow-multiple" style="color: black ">Arcade Room</h3>
+          <p>Check our offer now!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="carl-raw-8Gdayy2Lhi0-unsplash.jpg"alt="Chicago" style="width:auto;">
+        <div class="carousel-caption">
+          <h3 class="font-effect-shadow-multiple">Arcade Machine</h3>
+          <p>Check our colors variaty</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="lysander-yuen-sEvXeIUh1t4-unsplash.jpg" alt="New York" style="width:auto;">
+        <div class="carousel-caption">
+          <h3 class="font-effect-shadow-multiple" style="color: black">Arcade store</h3>
+          <p>check our set-up offers</p>
+        </div>
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<div class="container">
+ 
+  
+</div>
+
+<h2 class="text-center" style="font-family: 'Warnes', cursive;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;font-size: 500%;">The Top 3 Players</h2>
+    <br>
+    <br>
+
+
+<div id = "myDIV"class=" row ">
+
+  <div class="col col-lg-4">
+    <div class="card">
+  <div class="card__content">
+    
+    <div class="card__front" style="background-image: url(kabita-darlami-M781Pz0te-0-unsplash.jpg);border-radius: 15px;">
+      <h3 class="card__title">XQC</h3>
+      <p class="card__subtitle">#3 Stremer</p>
+    </div> 
+    
+    <div class="card__back">
+      <p class="card__body">Félix Lengyel, mieux connu sous son pseudonyme xQc, né le 12 novembre 1995 à Laval, Québec, est un streameur, vidéaste et joueur de jeux vidéo professionnel d'Overwatch. Bien qu'il soit francophone, xQc produit principalement du contenu en anglais. Il streame de manière régulière sur</p>
+    </div>
+    
+  </div>
+</div>
+  </div>
+
+  <div class="col col-lg-4" >
+    <div class="card justify-content-md-center">
+  <div class="card__content">
+    
+    <div class="card__front" style="background-image: url(sean-do-EHLd2utEf68-unsplash.jpg);border-radius: 15px;";>
+      <h3 class="card__title">Ninja</h3>
+      <p class="card__subtitle">#1 Streamer</p>
+    </div> 
+    
+    <div class="card__back">
+      <p class="card__body">Tyler Blevins, dit Ninja, né le 5 juin 1991, est un streamer et youtubeur américain. En 2018, il devient très populaire grâce à ses lives sur Fortnite sur la plateforme Twitch.</p>
+    </div>
+    
+  </div>
+</div>
+  </div>
+
+   <div class="ccol col-lg-4">
+    <div class="card">
+  <div class="card__content">
+    
+    <div class="card__front" style="background-image: url(kadyn-pierce-DM3AxUubhg0-unsplash.jpg);border-radius: 15px;">
+      <h3 class="card__title">Shroud</h3>
+      <p class="card__subtitle">#2 Streamer</p>
+    </div> 
+    
+    <div class="card__back">
+      <p class="card__body">Michael Grzesiek, mieux connu sous le nom de Shroud, est un streameur canadien, YouTubeur et ancien joueur professionnel de Counter-Strike: Global Offensive.</p>
+    </div>
+    
+  </div>
+</div>
+  </div>
+
+</div>
+//team
+<br>
+<br>
+<br>
+
+<div class='container mx-auto mt-5 col-md-100 mt-50' style="width: auto;height: auto;">
+    <div class="header">
+        <div  style="color: white;font-size: 50px " class="font-effect-neon" >Our Stars</div>
+        <p><small class="text-muted"></p>
+    </div>
+    <div class="row justify-content-center pb-5" style="font-family: Sofia, sans-serif;color: black;font-size: 30px">
+        <div class="card col-md-3 mt-100" style="background: linear-gradient(90deg, #145889 0%, #AB47BC 100%)">
+            <div class="card-content" >
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583336/AAA/4.jpg"> </div>
+                    <div class="card-title mt-4" > <h1 class="font-effect-neon"> Emmett Shear</h1><br /> <small>Head of marketing </small> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted">  </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 mt-100" style="background: linear-gradient(90deg, #145889 0%, #AB47BC 100%)">
+            <div class="card-content" >
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583319/AAA/3.jpg"> </div>
+                    <div class="card-title mt-4"><h1 class="font-effect-neon"> Sam Clemens</h1><br /> <small>Senior devolloper</small> </div>
+                    <div class="card-subtitle">
+                        <p style="color: white"> <small class="text-muted"> </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card col-md-3 mt-100" style="background: linear-gradient(90deg, #145889 0%, #AB47BC 100%)">
+            <div class="card-content" >
+                <div class="card-body p-0">
+                    <div class="profile"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1574583246/AAA/2.jpg"> </div>
+                    <div class="card-title mt-4"> <h1 class="font-effect-neon">Jonathan Simpson-Bint</h1><br /> <small>head of engineering</small> </div>
+                    <div class="card-subtitle">
+                        <p> <small class="text-muted">  </small> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+ <!-- <div class="mapouter" style=" position: relative;left: 30px;">
+  <div class="gmap_canvas" style="position: left">
+    <iframe width="600" height="266" id="gmap_canvas" src="https://maps.google.com/maps?q=ehtp&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+    </iframe>
+    <a href="https://123movies-org.net">123movies</a>
+    <br>
+    <style>.mapouter{position:relative;text-align:right;height:266px;width:600px;}</style><a href="https://www.embedgooglemap.net">map embed code</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:266px;width:600px;}</style>
+  </div>
+</div> -->
+<div class="container">
+    <div><h1 class="font-effect-neon">Contact Us</h1></div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mapouter"><div class="gmap_canvas"><iframe width="576" height="379" id="gmap_canvas" src="https://maps.google.com/maps?q=ehtp&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-org.net">123movies</a><br><style>.mapouter{position:relative;text-align:right;height:379px;width:576px;}</style><a href="https://www.embedgooglemap.net">google map coding</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:379px;width:576px;}</style></div></div>
+        </div>
+        <br />
+        <div class="col-md-6">
+            <div class="row" class="box-container">
+
+      <div class="box">
+        <h1 style="font-family: 'Warnes', cursive;
+    color: #fff; text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;">contact info</h1>
+        <br></br>
+        <h4 href="#"> <i class="fas fa-phone"></i> +1-456-7890 </h4>
+        <h4 href="#"> <i class="fas fa-phone"></i> +1-222-3333 </h4>
+        <h4 href="#"> <i class="fas fa-envelope"></i> support@twitch.com </h4>
+        <h4 href="#"> <i class="fas fa-map-marker-alt"></i> Silicon Valley, USA - 400104 </h4>
+    </div>
+    </div>                     
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+ <br>
+<br>
+<br>
+<br>
+
+</body>
+<h2 style="text-align: center;color: white">
+    Made with <i style="font-family: 'Warnes', cursive;
+    color: #fff;text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #cc00ff, 0 0 20px #cc00ff, 0 0 25px #cc00ff, 0 0 30px #cc00ff, 0 0 35px #cc00ff;">Love</i> in <a href="https://www.google.com/maps/place/Centre+de+Conf%C3%A9rence+EHTP/@33.5477077,-7.6511407,15z/data=!4m5!3m4!1s0x0:0x4f1dc99bf3831f9c!8m2!3d33.5477077!4d-7.6511407" target="_blank" style="font-family: 'Warnes', cursive;
+    color: #ff0066;text-shadow: 0 0 5px #fff, 0 0 10px #ff0066, 0 0 15px #cc00ff, 0 0 20px #cc00ff, 0 0 25px #cc00ff, 0 0 30px #cc00ff, 0 0 35px #cc00ff;">E.H.T.P</a> <h4>and some codepen :^) </h4>
+</h2>
+</html>
